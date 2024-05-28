@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentor_mate/constants.dart';
+import 'package:mentor_mate/screens/trainee/notifications_screen.dart';
 import 'package:mentor_mate/screens/trainer/attendance_screen.dart';
 import 'package:mentor_mate/screens/trainer/tasks_screen.dart';
 import 'package:mentor_mate/screens/trainer/trainees_screen.dart';
@@ -194,33 +195,39 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: size.height * 0.25,
-                    decoration: BoxDecoration(
-                      color: Colors.pink,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.notifications,
-                          color: Colors.white,
-                          size: 50,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "Notifications",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18),
-                        ),
-                      ],
+                  InkWell(
+                      onTap: (){
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (BuildContext context) => const NotificationsScreen()));
+                      },
+                    child: Container(
+                      height: size.height * 0.25,
+                      decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.notifications,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Notifications",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   InkWell(

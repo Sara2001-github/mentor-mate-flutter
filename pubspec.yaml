@@ -34,7 +34,8 @@ dependencies:
   path_provider: ^2.0.11
   permission_handler:
   device_info_plus: ^9.1.2
-
+  chat_gpt_sdk:
+  dash_chat_2:
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -5,8 +5,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor_mate/constants.dart';
 import 'package:mentor_mate/firebase_auth.dart';
+import 'package:mentor_mate/screens/trainee/ChatBotScreen.dart';
 import 'package:mentor_mate/screens/trainee/my_attendance_screen.dart';
 import 'package:mentor_mate/screens/trainee/my_tasks_screen.dart';
+import 'package:mentor_mate/screens/trainee/notifications_screen.dart';
+import 'package:mentor_mate/screens/trainer/send_notification_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TraineeHomeScreen extends StatefulWidget {
@@ -83,7 +86,7 @@ class _TraineeHomeScreenState extends State<TraineeHomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Welcome",
+                  const Text("Welcome",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Colors.white,
@@ -92,14 +95,14 @@ class _TraineeHomeScreenState extends State<TraineeHomeScreen> {
                     ),),
                   Text(name,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                         fontSize: 18
                     ),),
                   Text("Email: $email",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
                         fontSize: 16
@@ -144,7 +147,7 @@ class _TraineeHomeScreenState extends State<TraineeHomeScreen> {
                   InkWell(
                     onTap: (){
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (BuildContext context) => MyTasksScreen()));
+                          MaterialPageRoute(builder: (BuildContext context) => const MyTasksScreen()));
                     },
                     child: Container(
                       height: size.height * 0.25,
@@ -172,7 +175,7 @@ class _TraineeHomeScreenState extends State<TraineeHomeScreen> {
                   InkWell(
                     onTap: (){
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (BuildContext context) => MyAttendanceScreen()));
+                          MaterialPageRoute(builder: (BuildContext context) => const MyAttendanceScreen()));
                     },
                     child: Container(
                       height: size.height * 0.25,
@@ -197,26 +200,60 @@ class _TraineeHomeScreenState extends State<TraineeHomeScreen> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: size.height * 0.25,
-                    decoration: BoxDecoration(
-                      color: Colors.pink,
-                      borderRadius: BorderRadius.circular(10),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (BuildContext context) => const ChatBotScreen()));
+                    },
+                    child: Container(
+                      height: size.height * 0.25,
+                      decoration: BoxDecoration(
+                        color: Colors.teal,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.support_agent_rounded, color: Colors.white, size: 50,),
+                          SizedBox(height: 10,),
+                          Text("Chatbot",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18
+                            ),),
+                        ],
+                      ),
                     ),
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.notifications, color: Colors.white, size: 50,),
-                        SizedBox(height: 10,),
-                        Text("Notifications",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18
-                          ),),
-                      ],
+                  ),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (BuildContext context) => const NotificationsScreen()));
+                    },
+                    child: Container(
+                      height: size.height * 0.25,
+                      decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.notifications, color: Colors.white, size: 50,),
+                          SizedBox(height: 10,),
+                          Text("Notifications",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18
+                            ),),
+                        ],
+                      ),
                     ),
                   ),
                 ],),
