@@ -68,7 +68,7 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
     final request = ChatCompleteText(
         model: GptTurbo0301ChatModel(),
         messages: _messagesHistory,
-        maxToken: 50);
+        maxToken: 200);
     try {
       final response = await _openAI.onChatCompletion(request: request);
 

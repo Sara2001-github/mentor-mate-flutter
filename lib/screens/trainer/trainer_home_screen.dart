@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mentor_mate/constants.dart';
 import 'package:mentor_mate/screens/trainee/notifications_screen.dart';
 import 'package:mentor_mate/screens/trainer/attendance_screen.dart';
+import 'package:mentor_mate/screens/trainer/send_notification_screen.dart';
 import 'package:mentor_mate/screens/trainer/tasks_screen.dart';
 import 'package:mentor_mate/screens/trainer/trainees_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -198,7 +199,7 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                   InkWell(
                       onTap: (){
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (BuildContext context) => const NotificationsScreen()));
+                            MaterialPageRoute(builder: (BuildContext context) => const SendNotificationScreen()));
                       },
                     child: Container(
                       height: size.height * 0.25,
