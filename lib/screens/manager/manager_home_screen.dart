@@ -8,6 +8,7 @@ import 'package:mentor_mate/constants.dart';
 import 'package:mentor_mate/screens/download_file.dart';
 import 'package:mentor_mate/screens/manager/trainers_screen.dart';
 import 'package:mentor_mate/screens/trainer/attendance_screen.dart';
+import 'package:mentor_mate/screens/trainer/send_notification_screen.dart';
 import 'package:mentor_mate/screens/trainer/tasks_screen.dart';
 import 'package:mentor_mate/screens/trainer/trainees_screen.dart';
 import 'package:syncfusion_flutter_xlsio/xlsio.dart' as xcel;
@@ -360,33 +361,39 @@ class _ManagerHomeScreenState extends State<ManagerHomeScreen> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: size.height * 0.22,
-                    decoration: BoxDecoration(
-                      color: Colors.pink,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.notifications,
-                          color: Colors.white,
-                          size: 50,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "Notifications",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18),
-                        ),
-                      ],
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (BuildContext context) => const SendNotificationScreen()));
+                    },
+                    child: Container(
+                      height: size.height * 0.22,
+                      decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.notifications,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Notifications",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

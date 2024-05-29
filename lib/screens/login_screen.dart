@@ -287,7 +287,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             SizedBox(
                               height: size.height*0.02,
                             ),
-                            widget.userType.toString() != 'Admin' ?
+                            widget.userType.toString() != 'Manager' ?
                             Container(
                               width: size.width * 0.85,
                               margin: const EdgeInsets.only(top: 0),

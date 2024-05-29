@@ -280,8 +280,8 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                                           await SharedPreferences.getInstance();
 
                                           try {
-                                            if (widget.userType == 'Users') {
-                                              final snapshot = await FirebaseFirestore.instance.collection('Users').get();
+                                            if (widget.userType == 'Trainee') {
+                                              final snapshot = await FirebaseFirestore.instance.collection('Trainee').get();
                                               snapshot.docs.forEach((element) {
                                                 print('user data');
                                                 if(element['email'] == _emailControoler.text.toString().trim()) {
@@ -319,8 +319,8 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                                                     context, 'Sorry', 'User Not Found');
                                               }
                                             }
-                                            else if (widget.userType == 'Farmer') {
-                                              final snapshot = await FirebaseFirestore.instance.collection('Farmer').get();
+                                            else if (widget.userType == 'Admin') {
+                                              final snapshot = await FirebaseFirestore.instance.collection('Trainer').get();
                                               snapshot.docs.forEach((element) {
                                                 print('user data');
                                                 if(element['email'] == _emailControoler.text.toString().trim()) {

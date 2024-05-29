@@ -35,7 +35,7 @@ class _TraineesScreenState extends State<TraineesScreen> {
       body: Column(
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.75,
+            height: MediaQuery.of(context).size.height * 0.85,
             child: StreamBuilder(
                 stream: trainees,
                 builder: (BuildContext context,

@@ -19,7 +19,7 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
   final ChatUser _currentUser =
       ChatUser(id: "1", firstName: "Syed", lastName: "Ahsan");
   final ChatUser _gptChatUser =
-      ChatUser(id: "2", firstName: "Chat", lastName: "GPT");
+      ChatUser(id: "2", firstName: "AI", lastName: "Bot");
   List<ChatMessage> _chatMessages = [];
 
   List<ChatUser> _typingUsers = [];
