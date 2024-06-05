@@ -112,7 +112,7 @@ class _TrainersScreenState extends State<TrainersScreen> {
                                                     ElevatedButton(
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                              primary:
+                                                              backgroundColor:
                                                                   primaryColor,
                                                               textStyle: TextStyle(
                                                                   fontSize: 16,
@@ -147,7 +147,7 @@ class _TrainersScreenState extends State<TrainersScreen> {
                                                           });
                                                         },
                                                         style: ElevatedButton.styleFrom(
-                                                            primary: Colors.red,
+                                                            backgroundColor: Colors.red,
                                                             textStyle: TextStyle(
                                                                 fontSize: 16,
                                                                 fontWeight:

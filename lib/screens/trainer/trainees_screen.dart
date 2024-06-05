@@ -16,7 +16,6 @@ class TraineesScreen extends StatefulWidget {
 }
 
 class _TraineesScreenState extends State<TraineesScreen> {
-  var trainees = FirebaseFirestore.instance.collection("Trainee").snapshots();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +36,7 @@ class _TraineesScreenState extends State<TraineesScreen> {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.85,
             child: StreamBuilder(
-                stream: trainees,
+                stream: FirebaseFirestore.instance.collection("Trainee").snapshots(),
                 builder: (BuildContext context,
                     AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>>
                     snapshot) {
@@ -126,7 +125,7 @@ class _TraineesScreenState extends State<TraineesScreen> {
                                                         ElevatedButton(
                                                           style: ElevatedButton
                                                               .styleFrom(
-                                                              primary:
+                                                              backgroundColor:
                                                               primaryColor,
                                                               textStyle: TextStyle(
                                                                   fontSize: 16,
@@ -144,10 +143,12 @@ class _TraineesScreenState extends State<TraineesScreen> {
                                                               FirebaseFirestore
                                                                   .instance
                                                                   .collection(
-                                                                  "Trainer")
+                                                                  "Trainee")
                                                                   .doc(docId)
                                                                   .delete()
                                                                   .then((value) {
+
+
                                                                 Navigator.of(
                                                                     context)
                                                                     .pop(true);
@@ -161,7 +162,7 @@ class _TraineesScreenState extends State<TraineesScreen> {
                                                               });
                                                             },
                                                             style: ElevatedButton.styleFrom(
-                                                                primary: Colors.red,
+                                                                backgroundColor: Colors.red,
                                                                 textStyle: TextStyle(
                                                                     fontSize: 16,
                                                                     fontWeight:

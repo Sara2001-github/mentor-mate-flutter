@@ -183,7 +183,7 @@ class _AppBottomNavBarTrainerScreenState extends State<AppBottomNavBarTrainerScr
         actions:[
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                primary: primaryColor,
+                backgroundColor: primaryColor,
                 textStyle: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold)),
@@ -196,7 +196,7 @@ class _AppBottomNavBarTrainerScreenState extends State<AppBottomNavBarTrainerScr
             onPressed: () => Navigator.of(context).pop(true),
             //return true when click on "Yes"
             style: ElevatedButton.styleFrom(
-                primary: Colors.red,
+                backgroundColor: Colors.red,
                 textStyle: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold)),
