@@ -156,7 +156,7 @@ class _SendNotificationScreenState extends State<SendNotificationScreen> {
                     MaterialStateProperty.all(Colors.transparent),
                   ),
                   onPressed: () {
-                    sendNotification();
+                    sendFeedback();
                   },
                   child: const Text('Send', style: buttonStyle)),
             ),
@@ -168,20 +168,20 @@ class _SendNotificationScreenState extends State<SendNotificationScreen> {
     );
   }
 
-  void sendNotification() async {
+  void sendFeedback() async {
     if (titleController.text.isEmpty) {
-      AppUtils.instance.showToast(toastMessage: 'Please enter Notification Title');
+      AppUtils.instance.showToast(toastMessage: 'Please enter feedback Title');
     }
     else  if (descriptionController.text.isEmpty) {
       AppUtils.instance.showToast(toastMessage: 'Please enter Description');
     }
     else {
-      FirebaseFirestore.instance.collection("Notifications").add({
+      FirebaseFirestore.instance.collection("Feedback").add({
         "title": titleController.text,
         "description": descriptionController.text,
       }).then((value) {
         AppUtils.instance.showToast(
-            toastMessage: 'Notification sent');
+            toastMessage: 'Feedback sent');
         Navigator.pop(context, "added");
       });
     }

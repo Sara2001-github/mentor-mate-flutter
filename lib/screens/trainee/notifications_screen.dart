@@ -14,7 +14,7 @@ class NotificationsScreen extends StatefulWidget {
 
 class _NotificationsScreenState extends State<NotificationsScreen> {
   var notifications =
-  FirebaseFirestore.instance.collection("Notifications").snapshots();
+  FirebaseFirestore.instance.collection("Feedback").snapshots();
 
 
   @override
@@ -79,15 +79,15 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                                     Text(snapshot.data!.docs[index]["title"],
                                         style: const TextStyle(
                                             fontFamily: "Poppins")),
+                                    Text(
+                                        snapshot.data!.docs[index]["description"] ?? "",
+                                        style: const TextStyle(
+                                            fontFamily: "Poppins",
+                                            color: Colors.green,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 14)),
                                   ],
                                 ),
-                                trailing: Text(
-                                    snapshot.data!.docs[index]["description"] ?? "",
-                                    style: const TextStyle(
-                                        fontFamily: "Poppins",
-                                        color: Colors.green,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 14)),
                               ),
                             ),
                           );
