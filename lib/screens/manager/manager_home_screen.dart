@@ -7,6 +7,7 @@ import 'package:mentor_mate/app_utils.dart';
 import 'package:mentor_mate/constants.dart';
 import 'package:mentor_mate/screens/download_file.dart';
 import 'package:mentor_mate/screens/manager/trainers_screen.dart';
+import 'package:mentor_mate/screens/trainee/notifications_screen.dart';
 import 'package:mentor_mate/screens/trainer/attendance_screen.dart';
 import 'package:mentor_mate/screens/trainer/send_notification_screen.dart';
 import 'package:mentor_mate/screens/trainer/tasks_screen.dart';
@@ -364,7 +365,7 @@ class _ManagerHomeScreenState extends State<ManagerHomeScreen> {
                   InkWell(
                     onTap: (){
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (BuildContext context) => const SendNotificationScreen()));
+                          MaterialPageRoute(builder: (BuildContext context) => const NotificationsScreen()));
                     },
                     child: Container(
                       height: size.height * 0.22,
@@ -377,7 +378,7 @@ class _ManagerHomeScreenState extends State<ManagerHomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
-                            Icons.notifications,
+                            Icons.feedback_rounded,
                             color: Colors.white,
                             size: 50,
                           ),
@@ -385,7 +386,7 @@ class _ManagerHomeScreenState extends State<ManagerHomeScreen> {
                             height: 10,
                           ),
                           Text(
-                            "Notifications",
+                            "Feedback",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 color: Colors.white,

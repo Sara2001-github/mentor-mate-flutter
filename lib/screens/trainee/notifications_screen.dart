@@ -27,7 +27,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         backgroundColor: primaryColor,
         centerTitle: true,
         title: const Text(
-          "Notification",
+          "Feedback",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
         ),
       ),
@@ -82,7 +82,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                                   ],
                                 ),
                                 trailing: Text(
-                                    snapshot.data!.docs[index]["description"],
+                                    snapshot.data!.docs[index]["description"] ?? "",
                                     style: const TextStyle(
                                         fontFamily: "Poppins",
                                         color: Colors.green,

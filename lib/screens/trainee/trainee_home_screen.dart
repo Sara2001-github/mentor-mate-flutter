@@ -231,7 +231,7 @@ class _TraineeHomeScreenState extends State<TraineeHomeScreen> {
                   InkWell(
                     onTap: (){
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (BuildContext context) => const NotificationsScreen()));
+                          MaterialPageRoute(builder: (BuildContext context) => const SendNotificationScreen()));
                     },
                     child: Container(
                       height: size.height * 0.25,
@@ -243,9 +243,9 @@ class _TraineeHomeScreenState extends State<TraineeHomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.notifications, color: Colors.white, size: 50,),
+                          Icon(Icons.feedback_rounded, color: Colors.white, size: 50,),
                           SizedBox(height: 10,),
-                          Text("Notifications",
+                          Text("Feedback",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 color: Colors.white,

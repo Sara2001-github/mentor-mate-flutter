@@ -26,7 +26,7 @@ class _SendNotificationScreenState extends State<SendNotificationScreen> {
         backgroundColor: primaryColor,
         centerTitle: true,
         title: const Text(
-          "Send Notification",
+          "Feedback",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
         ),
       ),
@@ -104,7 +104,7 @@ class _SendNotificationScreenState extends State<SendNotificationScreen> {
                 fontFamily: "Poppins",
                 fontWeight: FontWeight.w400,
               ),
-              labelText: 'Description',
+              labelText: 'Type your feedback here..',
               labelStyle: const TextStyle(
                 color: textColor,
                 fontSize: 16,
