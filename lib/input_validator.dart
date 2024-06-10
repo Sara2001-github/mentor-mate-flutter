@@ -8,11 +8,12 @@ class InputValidator {
     }
     String pattern =
         r"^([a-zA-Z]{1,}[a-zA-z]{1,}'?-?[a-zA-Z]{1,}?([a-zA-Z]{0,})?)";
-    RegExp regex = new RegExp(pattern);
-    if (!regex.hasMatch(value))
+    RegExp regex = RegExp(pattern);
+    if (!regex.hasMatch(value)) {
       return 'Please enter valid first name';
-    else
+    } else {
       return 'success';
+    }
   }
   String validateFullName(String value) {
     if(value.isEmpty){
@@ -20,11 +21,12 @@ class InputValidator {
     }
     String pattern =
         r"^([a-zA-Z]{2,}[a-zA-z]{1,}'?-?[a-zA-Z]{2,}?([a-zA-Z]{1,})?)";
-    RegExp regex = new RegExp(pattern);
-    if (!regex.hasMatch(value))
+    RegExp regex = RegExp(pattern);
+    if (!regex.hasMatch(value)) {
       return 'Please enter valid full name';
-    else
+    } else {
       return 'success';
+    }
   }
   String validateLastName(String value) {
     if(value.isEmpty){
@@ -32,19 +34,21 @@ class InputValidator {
     }
     String pattern =
         r"^([a-zA-Z]{1,}[a-zA-z]{1,}'?-?[a-zA-Z]{1,}?([a-zA-Z]{0,})?)";
-    RegExp regex = new RegExp(pattern);
-    if (!regex.hasMatch(value))
+    RegExp regex = RegExp(pattern);
+    if (!regex.hasMatch(value)) {
       return 'Please enter valid last name';
-    else
+    } else {
       return 'success';
+    }
   }
 
   String validateMobile(String value) {
-    if (value.isEmpty)
+    if (value.isEmpty) {
       return 'Enter Phone Number';
+    }
     String pattern = r'^(\+\d{1,2}?)?\d{10}$';
-    RegExp regExp = new RegExp(pattern);
-    if (value.length == 0) {
+    RegExp regExp = RegExp(pattern);
+    if (value.isEmpty) {
       return 'Please enter mobile number';
     }
     else if(!value.toString().startsWith('+')) {
@@ -57,11 +61,12 @@ class InputValidator {
   }
 
   String validateAge(String value) {
-    if (value.isEmpty)
+    if (value.isEmpty) {
       return 'Enter Phone Number';
+    }
     String pattern = r'^(\d{1,3}?)?$';
-    RegExp regExp = new RegExp(pattern);
-    if (value.length == 0) {
+    RegExp regExp = RegExp(pattern);
+    if (value.isEmpty) {
       return 'Please enter mobile number';
     }
     else if (!regExp.hasMatch(value)) {
@@ -71,28 +76,28 @@ class InputValidator {
   }
 
   String validateEmail(String value) {
-    if (value.isEmpty)
+    if (value.isEmpty) {
       return 'Enter Email Address';
+    }
     String pattern =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-    RegExp regex = new RegExp(pattern);
-    if (!regex.hasMatch(value))
+    RegExp regex = RegExp(pattern);
+    if (!regex.hasMatch(value)) {
       return 'Wrong email, please use a correct email';
-    else
+    } else {
       return 'success';
+    }
   }
 
   String validateInput(String value) {
-    if (value.isEmpty)
+    if (value.isEmpty) {
       return 'Enter Some Text';
-    else
+    } else {
       return 'success';
+    }
   }
 
   bool _isNumeric(String result) {
-    if (result == null) {
-      return false;
-    }
     return double.tryParse(result) != null;
   }
 

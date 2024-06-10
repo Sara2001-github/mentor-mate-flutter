@@ -5,7 +5,7 @@ import 'package:mentor_mate/screens/splash_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-      options: FirebaseOptions(apiKey: 'AIzaSyAYikWMbuESHKectueoe3HOBAoXyKRCLhA',
+      options: const FirebaseOptions(apiKey: 'AIzaSyAYikWMbuESHKectueoe3HOBAoXyKRCLhA',
         appId: '1:405058010145:android:b8eac35eeaaed4e75eb760',
         messagingSenderId: '405058010145',
         projectId: 'mentor-mate-dfa83',
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

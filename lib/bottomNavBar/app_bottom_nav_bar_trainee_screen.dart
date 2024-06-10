@@ -2,11 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:mentor_mate/constants.dart';
 import 'package:mentor_mate/screens/trainee/trainee_home_screen.dart';
 import 'package:mentor_mate/screens/trainee/trainee_profile_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class AppBottomNavBarTraineeScreen extends StatefulWidget {
   const AppBottomNavBarTraineeScreen({Key? key,}) : super(key: key);
@@ -57,12 +55,7 @@ class _AppBottomNavBarTraineeScreenState extends State<AppBottomNavBarTraineeScr
   }
 
   getToken() async {
-    SharedPreferences _pref = await SharedPreferences.getInstance();
-    print('customerAccessToken');
-    print( _pref.getString('customerAccessToken'));
 
-    print('adminAccessToken');
-    print( _pref.getString('adminAccessToken'));
   }
 
   @override
@@ -70,7 +63,6 @@ class _AppBottomNavBarTraineeScreenState extends State<AppBottomNavBarTraineeScr
     //cartController.fetchCartItems();
     // TODO: implement initState
     super.initState();
-    print('UserType');
       setState(() {
         _pages = [
           const TraineeHomeScreen(userType:"Trainee"),
@@ -85,7 +77,6 @@ class _AppBottomNavBarTraineeScreenState extends State<AppBottomNavBarTraineeScr
   @override
   Widget build(BuildContext context) {
     final orientation = MediaQuery.of(context).orientation;
-    final size = MediaQuery.of(context).size;
 
     //getToken();
     return WillPopScope(
@@ -93,7 +84,7 @@ class _AppBottomNavBarTraineeScreenState extends State<AppBottomNavBarTraineeScr
       child: Scaffold(
         backgroundColor: Colors.white,
         body: _pages.elementAt(_selectedIndex),
-        bottomNavigationBar: Container(
+        bottomNavigationBar: SizedBox(
           height: 55,
           //  color: Colors.white,
           child: SizedBox(
@@ -117,7 +108,7 @@ class _AppBottomNavBarTraineeScreenState extends State<AppBottomNavBarTraineeScr
                       onTap: () {
                         setState(() {
                           _selectedIndex = 0;
-                          _pages[0] = TraineeHomeScreen(userType: "Trainee",);
+                          _pages[0] = const TraineeHomeScreen(userType: "Trainee",);
                         });
                       },
                       child: const Icon(
@@ -168,7 +159,7 @@ class _AppBottomNavBarTraineeScreenState extends State<AppBottomNavBarTraineeScr
                       onTap: () {
                         setState(() {
                           _selectedIndex = 1;
-                          _pages[1] = TraineeProfileScreen(userType: "Trainee",);
+                          _pages[1] = const TraineeProfileScreen(userType: "Trainee",);
                         });
                       },
                       child: const Icon(
@@ -189,7 +180,7 @@ class _AppBottomNavBarTraineeScreenState extends State<AppBottomNavBarTraineeScr
                           onTap: () {
                             setState(() {
                               _selectedIndex = 1;
-                              _pages[1] = TraineeProfileScreen(userType:"Trainee",);
+                              _pages[1] = const TraineeProfileScreen(userType:"Trainee",);
                             });
                           },
                           child: const Icon(

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:mentor_mate/constants.dart';
 import 'package:mentor_mate/screens/manager/manager_home_screen.dart';
 import 'package:mentor_mate/screens/manager/manager_profile_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class AppBottomNavBarManagerScreen extends StatefulWidget {
   const AppBottomNavBarManagerScreen({Key? key, }) : super(key: key);
@@ -28,7 +27,6 @@ class _AppBottomNavBarManagerScreenState extends State<AppBottomNavBarManagerScr
   }
 
   getToken() async {
-    SharedPreferences _pref = await SharedPreferences.getInstance();
 
   }
 
