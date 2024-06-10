@@ -3,13 +3,10 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:mentor_mate/app_utils.dart';
 import 'package:mentor_mate/constants.dart';
-import 'package:mentor_mate/screens/download_file.dart';
 import 'package:mentor_mate/screens/manager/trainers_screen.dart';
 import 'package:mentor_mate/screens/trainee/notifications_screen.dart';
 import 'package:mentor_mate/screens/trainer/attendance_screen.dart';
-import 'package:mentor_mate/screens/trainer/send_notification_screen.dart';
 import 'package:mentor_mate/screens/trainer/tasks_screen.dart';
 import 'package:mentor_mate/screens/trainer/trainees_screen.dart';
 import 'package:syncfusion_flutter_xlsio/xlsio.dart' as xcel;
@@ -288,8 +285,8 @@ class _ManagerHomeScreenState extends State<ManagerHomeScreen> {
                                             borderRadius: BorderRadius.circular(8),
                                             border: Border.all(color: primaryColor)
                                           ),
-                                          child: Center(
-                                            child: const Text("Attendances",
+                                          child: const Center(
+                                            child: Text("Attendances",
                                             style: TextStyle(
                                                 color: Colors.black,
                                                 fontWeight: FontWeight.w600,
@@ -313,8 +310,8 @@ class _ManagerHomeScreenState extends State<ManagerHomeScreen> {
                                             borderRadius: BorderRadius.circular(8),
                                             border: Border.all(color: primaryColor)
                                         ),
-                                          child: Center(
-                                            child: const Text("Tasks",
+                                          child: const Center(
+                                            child: Text("Tasks",
                                               style: TextStyle(
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.w600,

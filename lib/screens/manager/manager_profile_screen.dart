@@ -67,7 +67,7 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
               height: size.height*0.35,
               decoration: new BoxDecoration(
                 // borderRadius: BorderRadius.only(bottomRight: Radius.circular(0), bottomLeft: Radius.circular(50)),
-                gradient: LinearGradient(begin: Alignment.topCenter,
+                gradient: const LinearGradient(begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   stops: [
                     0.1,
@@ -92,7 +92,7 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
                         Container(
                             width: size.width,
                             height: size.height*0.08,
-                            child: Center(
+                            child: const Center(
                               child: Text('Profile',
                                 style: TextStyle(color: Colors.white, fontSize: 16,fontWeight: FontWeight.bold),
                               ),
@@ -108,7 +108,7 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
 
                 Container(
                     width: size.width,
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircleAvatar(
@@ -126,7 +126,7 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
                     width: size.width,
                     child: Center(
                       child: Text(name == '' ? (widget.userType) : name,
-                        style: TextStyle(color: Colors.white, fontSize: 16,fontWeight: FontWeight.bold),
+                        style: const TextStyle(color: Colors.white, fontSize: 16,fontWeight: FontWeight.bold),
                       ),
                     )),
 
@@ -139,7 +139,7 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
                     width: size.width,
                     child: Center(
                       child: Text(email == '' ? 'manager@gmail.com' : email,
-                        style: TextStyle(color: Colors.white, fontSize: 13,fontWeight: FontWeight.w400),
+                        style: const TextStyle(color: Colors.white, fontSize: 13,fontWeight: FontWeight.w400),
                       ),
                     )),
 
@@ -151,14 +151,14 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
           ),
 
 
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Padding(
-            padding: EdgeInsets.only(top: 4,bottom: 4,left: 10,right: 10),
+            padding: const EdgeInsets.only(top: 4,bottom: 4,left: 10,right: 10),
             child: ListTile(
               shape: RoundedRectangleBorder( //<-- SEE HERE
-                side: BorderSide(width: 1,color: Colors.white),
+                side: const BorderSide(width: 1,color: Colors.white),
                 borderRadius: BorderRadius.circular(10),
               ),
 
@@ -170,12 +170,12 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
                 ),
                 width: 30,
                 height: 30,//devSize.height*0.05,
-                child: Icon(Icons.logout, color: Colors.red,),
+                child: const Icon(Icons.logout, color: Colors.red,),
               ),
-              trailing: Icon(
+              trailing: const Icon(
                 Icons.arrow_forward_ios, color: Colors.black,size: 15,
               ),
-              title:  Text('Logout', style: TextStyle(
+              title:  const Text('Logout', style: TextStyle(
                   color: textColor,
                   fontWeight: FontWeight.w500
               )),
@@ -186,7 +186,7 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
               },
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
         ],

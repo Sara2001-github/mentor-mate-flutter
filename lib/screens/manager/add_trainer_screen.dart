@@ -51,14 +51,14 @@ class _AddTrainerScreenState extends State<AddTrainerScreen> {
         centerTitle: true,
         title: Text(
          widget.comingFrom == "add" ? "Add Trainer" : "Edit Trainer",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
         ),
       ),
       body: ModalProgressHUD(
         inAsyncCall: showLoader,
         child: Column(
           children: [
-        SizedBox(height: 20,),
+        const SizedBox(height: 20,),
             Container(
               margin: const EdgeInsets.only(left: 15, right: 15, top: 15),
               child: TextFormField(
@@ -247,8 +247,8 @@ class _AddTrainerScreenState extends State<AddTrainerScreen> {
                 padding: const EdgeInsets.all(15),
                 child: Container(
                   decoration: BoxDecoration(
-                    boxShadow: [
-                      const BoxShadow(
+                    boxShadow: const [
+                      BoxShadow(
                           color: Colors.black26,
                           offset: Offset(0, 4),
                           blurRadius: 5.0)
