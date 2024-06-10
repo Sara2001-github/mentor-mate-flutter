@@ -44,9 +44,9 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 10,),
-            Padding(
-              padding: const EdgeInsets.all(15),
+            const SizedBox(height: 10,),
+            const Padding(
+              padding: EdgeInsets.all(15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -247,7 +247,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   itemBuilder: (context, index) {
                     return Container(
                       height: 30,
-                      margin: EdgeInsets.only(bottom: 5),
+                      margin: const EdgeInsets.only(bottom: 5),
                       decoration: BoxDecoration(
                         color: secondaryColor.withOpacity(0.3),
                         borderRadius: BorderRadius.circular(6),
@@ -348,8 +348,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 padding: const EdgeInsets.all(15),
                 child: Container(
                   decoration: BoxDecoration(
-                    boxShadow: [
-                      const BoxShadow(
+                    boxShadow: const [
+                      BoxShadow(
                           color: Colors.black26,
                           offset: Offset(0, 4),
                           blurRadius: 5.0)
@@ -369,19 +369,19 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   ),
                   child: ElevatedButton(
                       style: ButtonStyle(
-                        shape: MaterialStateProperty.all<
+                        shape: WidgetStateProperty.all<
                             RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
-                        minimumSize: MaterialStateProperty.all(Size(
+                        minimumSize: WidgetStateProperty.all(Size(
                             MediaQuery.of(context).size.width, 50)),
                         backgroundColor:
-                        MaterialStateProperty.all(Colors.transparent),
+                        WidgetStateProperty.all(Colors.transparent),
                         // elevation: MaterialStateProperty.all(3),
                         shadowColor:
-                        MaterialStateProperty.all(Colors.transparent),
+                        WidgetStateProperty.all(Colors.transparent),
                       ),
                       onPressed: () {
                         addTask();
@@ -514,8 +514,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                       alignment: Alignment.bottomCenter,
                       child: Container(
                         decoration: BoxDecoration(
-                          boxShadow: [
-                            const BoxShadow(
+                          boxShadow: const [
+                            BoxShadow(
                                 color: Colors.black26,
                                 offset: Offset(0, 4),
                                 blurRadius: 5.0)
@@ -535,19 +535,19 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                         ),
                         child: ElevatedButton(
                             style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
+                              shape: WidgetStateProperty.all<
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                               ),
-                              minimumSize: MaterialStateProperty.all(Size(
+                              minimumSize: WidgetStateProperty.all(Size(
                                   MediaQuery.of(context).size.width * 0.8, 50)),
                               backgroundColor:
-                                  MaterialStateProperty.all(Colors.transparent),
+                                  WidgetStateProperty.all(Colors.transparent),
                               // elevation: MaterialStateProperty.all(3),
                               shadowColor:
-                                  MaterialStateProperty.all(Colors.transparent),
+                                  WidgetStateProperty.all(Colors.transparent),
                             ),
                             onPressed: () {
                               setState(() {});
@@ -571,10 +571,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
         firstDate: DateTime.now(),
         lastDate: DateTime(2025));
     if (picked != null) {
-      print("picked $picked");
       setState(() =>
           taskDateController.text = DateFormat('dd/MM/yyyy').format(picked));
-      print("dobController ${taskDateController.text}");
     }
   }
 

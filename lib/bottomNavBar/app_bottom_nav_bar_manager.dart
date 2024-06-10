@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:mentor_mate/constants.dart';
 import 'package:mentor_mate/screens/manager/manager_home_screen.dart';
 import 'package:mentor_mate/screens/manager/manager_profile_screen.dart';
@@ -30,23 +29,18 @@ class _AppBottomNavBarManagerScreenState extends State<AppBottomNavBarManagerScr
 
   getToken() async {
     SharedPreferences _pref = await SharedPreferences.getInstance();
-    print('customerAccessToken');
-    print( _pref.getString('customerAccessToken'));
 
-    print('adminAccessToken');
-    print( _pref.getString('adminAccessToken'));
   }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    print('UserType');
     setState(() {
       _pages = [
        // InstructorHomeScreen(instructorId: widget.subTitle.toString(),),
-        ManagerHomeScreen(userType: "Manager",),
-        ManagerProfileScreen(userType: "Manager",),
+        const ManagerHomeScreen(userType: "Manager",),
+        const ManagerProfileScreen(userType: "Manager",),
         // VehicleScreen(userType: widget.title.toString(),),
         //    BookingScreen(userType: widget.title.toString(),),
         //    ProfileScreen(userType: widget.title.toString(),),
@@ -78,7 +72,7 @@ class _AppBottomNavBarManagerScreenState extends State<AppBottomNavBarManagerScr
             orientation == Orientation.portrait
                 ? BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 4),
+                padding: const EdgeInsets.only(bottom: 4),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -86,7 +80,7 @@ class _AppBottomNavBarManagerScreenState extends State<AppBottomNavBarManagerScr
                   //    _pages[0] = InstructorHomeScreen( instructorId: widget.subTitle,);
                     });
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.home_outlined,
                     size: 25,
                     //color: Color(0xFF3A5A98),
@@ -100,7 +94,7 @@ class _AppBottomNavBarManagerScreenState extends State<AppBottomNavBarManagerScr
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(bottom: 4),
+                    padding: const EdgeInsets.only(bottom: 4),
                     child: InkWell(
                       onTap: () {
                         setState(() {
@@ -108,17 +102,17 @@ class _AppBottomNavBarManagerScreenState extends State<AppBottomNavBarManagerScr
                           //  _pages[0] = HomeScreen();
                         });
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.home_outlined,
                         size: 25,
                         //color: Color(0xFF3A5A98),
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 8,
                   ),
-                  Text(
+                  const Text(
                     'Home',
                     style: TextStyle(fontSize: 15),
                   )
@@ -128,7 +122,7 @@ class _AppBottomNavBarManagerScreenState extends State<AppBottomNavBarManagerScr
             orientation == Orientation.portrait
                 ? BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 4),
+                padding: const EdgeInsets.only(bottom: 4),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -136,7 +130,7 @@ class _AppBottomNavBarManagerScreenState extends State<AppBottomNavBarManagerScr
                       // _pages[2] = ProfileScreen(userType: widget.title.toString(),);
                     });
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.account_circle_outlined,
                     size: 25,
                   ),
@@ -149,7 +143,7 @@ class _AppBottomNavBarManagerScreenState extends State<AppBottomNavBarManagerScr
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(bottom: 4),
+                    padding: const EdgeInsets.only(bottom: 4),
                     child: InkWell(
                       onTap: () {
                         setState(() {
@@ -157,16 +151,16 @@ class _AppBottomNavBarManagerScreenState extends State<AppBottomNavBarManagerScr
                           //   _pages[2] = ProfileScreen(userType: widget.title.toString(),);
                         });
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.account_circle_outlined,
                         size: 25,
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 8,
                   ),
-                  Text(
+                  const Text(
                     'Profile',
                     style: TextStyle(fontSize: 15),
                   )
@@ -183,18 +177,18 @@ class _AppBottomNavBarManagerScreenState extends State<AppBottomNavBarManagerScr
       //the return value will be from "Yes" or "No" options
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Exit App'),
-        content: Text('Do you want to exit the App?'),
+        title: const Text('Exit App'),
+        content: const Text('Do you want to exit the App?'),
         actions:[
           ElevatedButton(
             style: ElevatedButton.styleFrom(
                 backgroundColor: primaryColor,
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold)),
             onPressed: () => Navigator.of(context).pop(false),
             //return false when click on "NO"
-            child:Text('No'),
+            child:const Text('No'),
           ),
 
           ElevatedButton(
@@ -202,10 +196,10 @@ class _AppBottomNavBarManagerScreenState extends State<AppBottomNavBarManagerScr
             //return true when click on "Yes"
             style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold)),
-            child:Text('Yes'),
+            child:const Text('Yes'),
           ),
 
         ],

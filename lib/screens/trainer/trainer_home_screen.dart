@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mentor_mate/constants.dart';
 import 'package:mentor_mate/screens/trainee/notifications_screen.dart';
 import 'package:mentor_mate/screens/trainer/attendance_screen.dart';
-import 'package:mentor_mate/screens/trainer/send_notification_screen.dart';
 import 'package:mentor_mate/screens/trainer/tasks_screen.dart';
 import 'package:mentor_mate/screens/trainer/trainees_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -32,9 +31,7 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
         uid = prefs.getString('userId')!;
         name = prefs.getString('userName')!;
       });
-      print("uid: " + uid);
     } else {
-      print('Starting usertype');
     }
   }
 
@@ -83,7 +80,7 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "Welcome",
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -94,7 +91,7 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                   Text(
                     name,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                         fontSize: 18),
@@ -102,7 +99,7 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                   Text(
                     "Email: $email",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
                         fontSize: 16),
@@ -126,7 +123,7 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  TraineesScreen(comingFrom: "Trainer")));
+                                  const TraineesScreen(comingFrom: "Trainer")));
                     },
                     child: Container(
                       height: size.height * 0.25,
@@ -164,7 +161,7 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  TasksScreen(comingFrom: "Trainer",)));
+                                  const TasksScreen(comingFrom: "Trainer",)));
                     },
                     child: Container(
                       height: size.height * 0.25,
@@ -237,7 +234,7 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  AdminAttendanceScreen(comingFrom: "Trainer",)));
+                                  const AdminAttendanceScreen(comingFrom: "Trainer",)));
                     },
                     child: Container(
                       height: size.height * 0.25,

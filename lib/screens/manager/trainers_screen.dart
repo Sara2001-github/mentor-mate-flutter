@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor_mate/screens/manager/add_trainer_screen.dart';
-import 'package:mentor_mate/screens/trainer/add_trainee_screen.dart';
 
 import '../../app_utils.dart';
 import '../../constants.dart';
@@ -69,7 +68,7 @@ class _TrainersScreenState extends State<TrainersScreen> {
                               //     transition: Transition.rightToLeftWithFade, arguments: "Edit");
                             },
                             child: Container(
-                              margin: EdgeInsets.only(bottom: 10),
+                              margin: const EdgeInsets.only(bottom: 10),
                               decoration: BoxDecoration(
                                   color: secondaryColor.withOpacity(0.4)),
                               child: Padding(
@@ -105,8 +104,8 @@ class _TrainersScreenState extends State<TrainersScreen> {
                                                 context: context,
                                                 builder: (context) =>
                                                     AlertDialog(
-                                                  title: Text('Delete Trainer'),
-                                                  content: Text(
+                                                  title: const Text('Delete Trainer'),
+                                                  content: const Text(
                                                       'Do you want to delete this trainer?'),
                                                   actions: [
                                                     ElevatedButton(
@@ -114,7 +113,7 @@ class _TrainersScreenState extends State<TrainersScreen> {
                                                           .styleFrom(
                                                               backgroundColor:
                                                                   primaryColor,
-                                                              textStyle: TextStyle(
+                                                              textStyle: const TextStyle(
                                                                   fontSize: 16,
                                                                   fontWeight:
                                                                       FontWeight
@@ -123,7 +122,7 @@ class _TrainersScreenState extends State<TrainersScreen> {
                                                           Navigator.of(context)
                                                               .pop(false),
                                                       //return false when click on "NO"
-                                                      child: Text('No'),
+                                                      child: const Text('No'),
                                                     ),
                                                     ElevatedButton(
                                                         onPressed: () {
@@ -148,18 +147,18 @@ class _TrainersScreenState extends State<TrainersScreen> {
                                                         },
                                                         style: ElevatedButton.styleFrom(
                                                             backgroundColor: Colors.red,
-                                                            textStyle: TextStyle(
+                                                            textStyle: const TextStyle(
                                                                 fontSize: 16,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .bold)),
-                                                        child: Text('Yes'))
+                                                        child: const Text('Yes'))
                                                   ],
                                                 ),
                                               );
                                           },
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(15.0),
+                                          child: const Padding(
+                                            padding: EdgeInsets.all(15.0),
                                             child: Row(
                                               children: [
                                                 Icon(
@@ -191,8 +190,8 @@ class _TrainersScreenState extends State<TrainersScreen> {
                                                       docId: snapshot.data!.docs[index].id,
                                                     )));
                                           },
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(15.0),
+                                          child: const Padding(
+                                            padding: EdgeInsets.all(15.0),
                                             child: Row(
                                               children: [
                                                 Icon(

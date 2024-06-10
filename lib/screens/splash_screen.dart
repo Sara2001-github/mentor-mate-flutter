@@ -1,11 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor_mate/bottomNavBar/app_bottom_nav_bar_trainer.dart';
 import 'package:mentor_mate/bottomNavBar/app_bottom_nav_bar_trainee_screen.dart';
 import 'package:mentor_mate/bottomNavBar/app_bottom_nav_bar_manager.dart';
-import 'package:mentor_mate/constants.dart';
 import 'package:mentor_mate/screens/usertype_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 //import 'package:mec/constants.dart';
@@ -38,22 +36,22 @@ class _SplashScreenState extends State<SplashScreen> {
   void navigationPage() {
     if (userType == "Admin") {
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (BuildContext context) => AppBottomNavBarTrainerScreen()));
+          MaterialPageRoute(builder: (BuildContext context) => const AppBottomNavBarTrainerScreen()));
 
     }
     else if (userType == "Trainer") {
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (BuildContext context) => AppBottomNavBarManagerScreen()));
+          MaterialPageRoute(builder: (BuildContext context) => const AppBottomNavBarManagerScreen()));
 
     }
     else if (userType == "Trainee") {
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (BuildContext context) => AppBottomNavBarTraineeScreen()));
+          MaterialPageRoute(builder: (BuildContext context) => const AppBottomNavBarTraineeScreen()));
 
     }
     else {
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (BuildContext context) => UserType()));
+          MaterialPageRoute(builder: (BuildContext context) => const UserType()));
     }
   }
 
@@ -66,16 +64,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
   getData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    print('Starting usertype ' + prefs.getString('userType').toString());
     if(prefs.getString('userType') != null) {
       setState(() {
         userType = prefs.getString('userType')!;
         email = prefs.getString('userEmail')!;
         // uid = prefs.getString('userId')!;
       });
-      print(userType.toString() + ' This is user type');
     } else {
-      print('Starting usertype');
     }
   }
   @override
@@ -87,7 +82,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         width: size.width,
         height: size.height,
-        decoration: new BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/splash.jpeg',), fit: BoxFit.cover
           )

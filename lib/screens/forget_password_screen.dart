@@ -20,7 +20,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   final TextEditingController _emailControoler = TextEditingController();
   bool _isLoading = false;
   bool _isVisible = false;
-  MethodsHandler _methodsHandler = MethodsHandler();
+  final MethodsHandler _methodsHandler = MethodsHandler();
   InputValidator _inputValidator = InputValidator();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   String isCreated = '';
@@ -53,7 +53,6 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
       _isVisible = false;
       _isLoading = false;
     });
-    print('userType');
    // print(widget.userType.toString());
     super.initState();
   }
@@ -71,7 +70,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
         child: Container(
           width: size.width,
           height: size.height,
-          decoration: new BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
 
           ),
@@ -108,7 +107,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 ],),
 
               SingleChildScrollView(
-                child: Container(
+                child: SizedBox(
                   height: size.height,
 
                   child: Column(
@@ -217,8 +216,8 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                               child: Container(
 
                                 decoration: BoxDecoration(
-                                  boxShadow: [
-                                    const BoxShadow(
+                                  boxShadow: const [
+                                    BoxShadow(
                                         color: Colors.black26, offset: Offset(0, 4), blurRadius: 5.0)
                                   ],
                                   gradient: const LinearGradient(
@@ -276,29 +275,20 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                                           setState(() {
                                             _isLoading = true;
                                           });
-                                          SharedPreferences prefs =
-                                          await SharedPreferences.getInstance();
 
                                           try {
                                             if (widget.userType == 'Trainee') {
                                               final snapshot = await FirebaseFirestore.instance.collection('Trainee').get();
-                                              snapshot.docs.forEach((element) {
-                                                print('user data');
+                                              for (var element in snapshot.docs) {
                                                 if(element['email'] == _emailControoler.text.toString().trim()) {
-                                                  print('user age in if of current user ');
                                                   //   print(element['age']);
                                                   setState(() {
                                                     isCreated = 'yes';
                                                   });
                                                 }
-                                              });
+                                              }
 
                                               if(isCreated == 'yes') {
-                                                final result =
-                                                await _auth.sendPasswordResetEmail(
-                                                    email: _emailControoler.text
-                                                        .trim()
-                                                        .toString(),);
 
                                                 setState(() {
                                                   _isLoading = false;
@@ -321,22 +311,19 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                                             }
                                             else if (widget.userType == 'Admin') {
                                               final snapshot = await FirebaseFirestore.instance.collection('Trainer').get();
-                                              snapshot.docs.forEach((element) {
-                                                print('user data');
+                                              for (var element in snapshot.docs) {
                                                 if(element['email'] == _emailControoler.text.toString().trim()) {
-                                                  print('user age in if of current user ');
                                                   //   print(element['age']);
                                                   setState(() {
                                                     isCreated = 'yes';
                                                   });
                                                 }
-                                              });
+                                              }
 
                                               if(isCreated == 'yes') {
                                                 final result =
                                                 await _auth.sendPasswordResetEmail(email: _emailControoler.text);
 
-                                                print('Account creation successful');
                                                 setState(() {
                                                   _isLoading = false;
                                                 });
@@ -365,7 +352,6 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                                             setState(() {
                                               _isLoading = false;
                                             });
-                                            print(e.code);
                                             switch (e.code) {
                                               case 'invalid-email':
                                                 _methodsHandler.showAlertDialog(context,
@@ -427,7 +413,6 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 alignment: Alignment.topLeft,
                 child: InkWell(
                   onTap: () {
-                    print("tapped");
                     Navigator.of(context).pop();
                   },
                   child: const Padding(

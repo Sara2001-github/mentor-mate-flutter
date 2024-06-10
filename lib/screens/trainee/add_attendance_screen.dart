@@ -37,7 +37,7 @@ class _AddAttendanceScreenState extends State<AddAttendanceScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "Mark Attendance",
               style: TextStyle(
                   fontSize: 24,
@@ -45,46 +45,44 @@ class _AddAttendanceScreenState extends State<AddAttendanceScreen> {
               ),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.05,),
-            Container(
-              child: TextFormField(
-                controller: attendanceDateController,
-                keyboardType: TextInputType.emailAddress,
-                style: const TextStyle(
-                  fontSize: 14,
-                  color: Colors.black,
+            TextFormField(
+              controller: attendanceDateController,
+              keyboardType: TextInputType.emailAddress,
+              style: const TextStyle(
+                fontSize: 14,
+                color: Colors.black,
+              ),
+              onTap: () {
+                selectDate();
+              },
+              decoration: InputDecoration(
+                contentPadding:
+                const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                focusColor: Colors.white,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
-                onTap: () {
-                  selectDate();
-                },
-                decoration: InputDecoration(
-                  contentPadding:
-                  const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                  focusColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
 
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: textColor, width: 1.0),
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  fillColor: Colors.grey,
-                  hintText: "",
+                focusedBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(color: textColor, width: 1.0),
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                fillColor: Colors.grey,
+                hintText: "",
 
-                  //make hint text
-                  hintStyle: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 16,
-                    fontFamily: "Poppins",
-                    fontWeight: FontWeight.w400,
-                  ),
-                  labelText: 'Date',
-                  labelStyle: const TextStyle(
-                    color: textColor,
-                    fontSize: 16,
-                    fontFamily: "Poppins",
-                    fontWeight: FontWeight.w400,
-                  ),
+                //make hint text
+                hintStyle: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 16,
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.w400,
+                ),
+                labelText: 'Date',
+                labelStyle: const TextStyle(
+                  color: textColor,
+                  fontSize: 16,
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ),
@@ -93,8 +91,8 @@ class _AddAttendanceScreenState extends State<AddAttendanceScreen> {
               alignment: Alignment.bottomCenter,
               child: Container(
                 decoration: BoxDecoration(
-                  boxShadow: [
-                    const BoxShadow(
+                  boxShadow: const [
+                    BoxShadow(
                         color: Colors.black26,
                         offset: Offset(0, 4),
                         blurRadius: 5.0)
@@ -166,10 +164,8 @@ class _AddAttendanceScreenState extends State<AddAttendanceScreen> {
         lastDate: DateTime.now(),
     );
     if (picked != null) {
-      print("picked $picked");
       setState(() =>
       attendanceDateController.text = DateFormat('dd/MM/yyyy').format(picked));
-      print("Attendance Date ${attendanceDateController.text}");
     }
   }
 

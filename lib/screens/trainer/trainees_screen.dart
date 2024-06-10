@@ -74,7 +74,7 @@ class _TraineesScreenState extends State<TraineesScreen> {
                               //     transition: Transition.rightToLeftWithFade, arguments: "Edit");
                             },
                             child: Container(
-                              margin: EdgeInsets.only(bottom: 10),
+                              margin: const EdgeInsets.only(bottom: 10),
                               decoration: BoxDecoration(
                                 color: secondaryColor.withOpacity(0.4)
                               ),
@@ -118,8 +118,8 @@ class _TraineesScreenState extends State<TraineesScreen> {
                                                 context: context,
                                                 builder: (context) =>
                                                     AlertDialog(
-                                                      title: Text('Delete Trainee'),
-                                                      content: Text(
+                                                      title: const Text('Delete Trainee'),
+                                                      content: const Text(
                                                           'Do you want to delete this trainee?'),
                                                       actions: [
                                                         ElevatedButton(
@@ -127,7 +127,7 @@ class _TraineesScreenState extends State<TraineesScreen> {
                                                               .styleFrom(
                                                               backgroundColor:
                                                               primaryColor,
-                                                              textStyle: TextStyle(
+                                                              textStyle: const TextStyle(
                                                                   fontSize: 16,
                                                                   fontWeight:
                                                                   FontWeight
@@ -136,7 +136,7 @@ class _TraineesScreenState extends State<TraineesScreen> {
                                                               Navigator.of(context)
                                                                   .pop(false),
                                                           //return false when click on "NO"
-                                                          child: Text('No'),
+                                                          child: const Text('No'),
                                                         ),
                                                         ElevatedButton(
                                                             onPressed: () {
@@ -163,18 +163,18 @@ class _TraineesScreenState extends State<TraineesScreen> {
                                                             },
                                                             style: ElevatedButton.styleFrom(
                                                                 backgroundColor: Colors.red,
-                                                                textStyle: TextStyle(
+                                                                textStyle: const TextStyle(
                                                                     fontSize: 16,
                                                                     fontWeight:
                                                                     FontWeight
                                                                         .bold)),
-                                                            child: Text('Yes'))
+                                                            child: const Text('Yes'))
                                                       ],
                                                     ),
                                               );
                                             },
-                                            child: Padding(
-                                              padding: const EdgeInsets.all(15.0),
+                                            child: const Padding(
+                                              padding: EdgeInsets.all(15.0),
                                               child: Row(
                                                 children: [
                                                   Icon(
@@ -207,8 +207,8 @@ class _TraineesScreenState extends State<TraineesScreen> {
                                                         department: snapshot.data!.docs[index]["department"],
                                                       )));
                                             },
-                                            child: Padding(
-                                              padding: const EdgeInsets.all(15.0),
+                                            child: const Padding(
+                                              padding: EdgeInsets.all(15.0),
                                               child: Row(
                                                 children: [
                                                   Icon(

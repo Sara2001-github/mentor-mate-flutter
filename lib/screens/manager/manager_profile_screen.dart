@@ -22,7 +22,7 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
   String uid = "";
   String name = "";
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  MethodsHandler _methodsHandler = MethodsHandler();
+  final MethodsHandler _methodsHandler = MethodsHandler();
 
   getData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -43,7 +43,6 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
         });
       });
     } else {
-      print('Starting usertype');
     }
   }
 
@@ -65,9 +64,9 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
           Container(
               width: size.width,
               height: size.height*0.35,
-              decoration: new BoxDecoration(
+              decoration: const BoxDecoration(
                 // borderRadius: BorderRadius.only(bottomRight: Radius.circular(0), bottomLeft: Radius.circular(50)),
-                gradient: const LinearGradient(begin: Alignment.topCenter,
+                gradient: LinearGradient(begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   stops: [
                     0.1,
@@ -82,14 +81,14 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
               child: Column(children: [
                 Padding(
                   padding:  EdgeInsets.only(top: size.height*0.03),
-                  child: Container(
+                  child: SizedBox(
                     height: size.height*0.08,
                     width: size.width,
                     child: Stack(
                       alignment: Alignment.centerRight,
 
                       children: [
-                        Container(
+                        SizedBox(
                             width: size.width,
                             height: size.height*0.08,
                             child: const Center(
@@ -106,7 +105,7 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
                   height: size.height*0.01,
                 ),
 
-                Container(
+                SizedBox(
                     width: size.width,
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -122,7 +121,7 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
                   height: size.height*0.02,
                 ),
 
-                Container(
+                SizedBox(
                     width: size.width,
                     child: Center(
                       child: Text(name == '' ? (widget.userType) : name,
@@ -135,7 +134,7 @@ class _ManagerProfileScreenState extends State<ManagerProfileScreen> {
                   height: size.height*0.01,
                 ),
 
-                Container(
+                SizedBox(
                     width: size.width,
                     child: Center(
                       child: Text(email == '' ? 'manager@gmail.com' : email,

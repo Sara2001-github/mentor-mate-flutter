@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentor_mate/constants.dart';
 import 'package:mentor_mate/screens/login_screen.dart';
-import 'package:mentor_mate/screens/welcome_screen.dart';
 
 class UserType extends StatefulWidget {
   const UserType({Key? key}) : super(key: key);
@@ -19,7 +18,7 @@ class _UserTypeState extends State<UserType> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: size.height,
         width: size.width,
         // decoration: BoxDecoration(
@@ -60,8 +59,8 @@ class _UserTypeState extends State<UserType> {
             SizedBox(
               height: size.height * 0.1,
             ),
-            Padding(
-              padding: const EdgeInsets.all(15),
+            const Padding(
+              padding: EdgeInsets.all(15),
               child: Text(
                 "Choose Yourself",
                 style: TextStyle(
@@ -96,7 +95,7 @@ class _UserTypeState extends State<UserType> {
                                 : Border.all(width: 1, color: Colors.white),
                             color: isTrainerSelected
                                 ? primaryColor.withOpacity(0.15)
-                                : Color(0xffececec),
+                                : const Color(0xffececec),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Column(
@@ -108,10 +107,10 @@ class _UserTypeState extends State<UserType> {
                                 color: Colors.black,
                                 height: 60,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
-                              Text(
+                              const Text(
                                 "Trainer",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
@@ -138,7 +137,7 @@ class _UserTypeState extends State<UserType> {
                           decoration: BoxDecoration(
                             color: isTraineeSelected
                                 ? primaryColor.withOpacity(0.15)
-                                : Color(0xffececec),
+                                : const Color(0xffececec),
                             border: isTraineeSelected
                                 ? Border.all(width: 2, color: primaryColor)
                                 : Border.all(width: 1, color: Colors.white),
@@ -153,10 +152,10 @@ class _UserTypeState extends State<UserType> {
                                 color: Colors.black,
                                 height: 50,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
-                              Text(
+                              const Text(
                                 "Trainee",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
@@ -186,7 +185,7 @@ class _UserTypeState extends State<UserType> {
                                 : Border.all(width: 1, color: Colors.white),
                             color: isManagerSelected
                                 ? primaryColor.withOpacity(0.15)
-                                : Color(0xffececec),
+                                : const Color(0xffececec),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Column(
@@ -198,10 +197,10 @@ class _UserTypeState extends State<UserType> {
                                 color: Colors.black,
                                 height: 50,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
-                              Text(
+                              const Text(
                                 "Manager/Admin",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
@@ -220,8 +219,8 @@ class _UserTypeState extends State<UserType> {
               padding: const EdgeInsets.all(15),
               child: Container(
                 decoration: BoxDecoration(
-                  boxShadow: [
-                    const BoxShadow(
+                  boxShadow: const [
+                    BoxShadow(
                         color: Colors.black26,
                         offset: Offset(0, 4),
                         blurRadius: 5.0)
@@ -259,21 +258,21 @@ class _UserTypeState extends State<UserType> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginScreen(
+                                builder: (context) => const LoginScreen(
                                       userType: 'Admin',
                                     )));
                       } else if (isTraineeSelected) {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginScreen(
+                                builder: (context) => const LoginScreen(
                                       userType: 'Trainee',
                                     )));
                       } else {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginScreen(
+                                builder: (context) => const LoginScreen(
                                   userType: 'Manager',
                                 )));
                       }

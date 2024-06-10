@@ -89,7 +89,6 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
       });
     }
     catch (e){
-      print(e.toString());
     }
   }
 }

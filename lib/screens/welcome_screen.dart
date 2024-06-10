@@ -18,7 +18,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: size.width,
         height: size.height,
         // decoration: const BoxDecoration(

@@ -391,7 +391,6 @@ class _AddTrainerScreenState extends State<AddTrainerScreen> {
       user = userCredential.user;
       user = auth.currentUser;
       trainerId = userCredential.user?.uid ?? "";
-      print('UID: ${userCredential.user?.uid ?? ""}');
     } on FirebaseAuthException catch (e) {
       setState(() {
         showLoader = false;

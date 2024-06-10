@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor_mate/constants.dart';
-import 'package:mentor_mate/firebase_auth.dart';
 import 'package:mentor_mate/screens/trainee/add_attendance_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -21,8 +19,6 @@ class _MyAttendanceScreenState extends State<MyAttendanceScreen> {
   String email = "";
   String uid = "";
   String name = "";
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  MethodsHandler _methodsHandler = MethodsHandler();
 
   getData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -33,9 +29,7 @@ class _MyAttendanceScreenState extends State<MyAttendanceScreen> {
         uid = prefs.getString('userId')!;
         name = prefs.getString('userName')!;
       });
-      print("uid: " + uid);
     } else {
-      print('Starting usertype');
     }
   }
 
@@ -121,6 +115,7 @@ class _MyAttendanceScreenState extends State<MyAttendanceScreen> {
                               ),
                             );
                           }
+                          return null;
                         });
                   } else {
                     return const Center(

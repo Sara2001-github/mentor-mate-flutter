@@ -1,14 +1,10 @@
 
 
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor_mate/constants.dart';
-import 'package:mentor_mate/firebase_auth.dart';
 import 'package:mentor_mate/screens/trainee/ChatBotScreen.dart';
 import 'package:mentor_mate/screens/trainee/my_attendance_screen.dart';
 import 'package:mentor_mate/screens/trainee/my_tasks_screen.dart';
-import 'package:mentor_mate/screens/trainee/notifications_screen.dart';
 import 'package:mentor_mate/screens/trainer/send_notification_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -26,8 +22,6 @@ class _TraineeHomeScreenState extends State<TraineeHomeScreen> {
   String email = "";
   String uid = "";
   String name = "";
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  MethodsHandler _methodsHandler = MethodsHandler();
 
   getData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -38,9 +32,7 @@ class _TraineeHomeScreenState extends State<TraineeHomeScreen> {
         uid = prefs.getString('userId')!;
         name = prefs.getString('userName')!;
       });
-      print("uid: " + uid);
     } else {
-      print('Starting usertype');
     }
   }
 

@@ -76,7 +76,6 @@ class MethodsHandler{
       prefs.setString('userEmail', email);
       prefs.setString('userPassword', password.toString());
       prefs.setString('userId', user!.uid);
-      print('Account creation successful');
       // Navigator.push(
       //   context,
       //   PageRouteBuilder(
@@ -126,7 +125,6 @@ class MethodsHandler{
       );
       return userFromFirebase(user);
     } on FirebaseAuthException catch (e) {
-      print(e.code);
       switch (e.code) {
         case 'invalid-email':
           Fluttertoast.showToast(
@@ -180,7 +178,6 @@ class MethodsHandler{
       prefs.setString('userEmail', email);
       prefs.setString('userPassword', password.toString());
       prefs.setString('userId', user.uid);
-      print('Account creation successful');
       Fluttertoast.showToast(
         msg: "Account created successfully",
         toastLength: Toast.LENGTH_SHORT,
@@ -243,7 +240,7 @@ class MethodsHandler{
         prefs.remove('userType');
         prefs.remove('userPassword');
         prefs.remove('userId');
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>UserType()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const UserType()));
 
 
       });
@@ -270,10 +267,10 @@ class MethodsHandler{
     // set up the button
 
     CupertinoAlertDialog alert =  CupertinoAlertDialog(
-      title: Text("$title"),
+      title: Text(title),
       content: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Text("$content"),
+        child: Text(content),
       ),
       actions: [
         // CupertinoDialogAction(
@@ -284,7 +281,7 @@ class MethodsHandler{
         //     }
         // ),
         CupertinoDialogAction(
-            child: Text("OK"),
+            child: const Text("OK"),
             onPressed: (){
               Navigator.of(context).pop();
             }

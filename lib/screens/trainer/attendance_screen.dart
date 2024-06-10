@@ -85,14 +85,12 @@ class _AdminAttendanceScreenState extends State<AdminAttendanceScreen> {
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.w500)),
                                         Text(
-                                            "Date: " +
-                                                snapshot.data!.docs[index]
-                                                    ["date"],
+                                            'Date: ' + snapshot.data!.docs[index]["date"],
                                             style: const TextStyle(
                                                 fontFamily: "Poppins",
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.w500)),
-                                        SizedBox(height: 8),
+                                        const SizedBox(height: 8),
                                         snapshot.data!.docs[index]["status"] ==
                                                 "Pending" && widget.comingFrom == "Trainer"
                                             ? Row(
@@ -103,8 +101,8 @@ class _AdminAttendanceScreenState extends State<AdminAttendanceScreen> {
                                                     width: 120,
                                                     height: 35,
                                                     decoration: BoxDecoration(
-                                                      boxShadow: [
-                                                        const BoxShadow(
+                                                      boxShadow: const [
+                                                        BoxShadow(
                                                             color:
                                                                 Colors.black26,
                                                             offset:
@@ -133,7 +131,7 @@ class _AdminAttendanceScreenState extends State<AdminAttendanceScreen> {
                                                     ),
                                                     child: ElevatedButton(
                                                         style: ButtonStyle(
-                                                          shape: MaterialStateProperty
+                                                          shape: WidgetStateProperty
                                                               .all<
                                                                   RoundedRectangleBorder>(
                                                             RoundedRectangleBorder(
@@ -143,7 +141,7 @@ class _AdminAttendanceScreenState extends State<AdminAttendanceScreen> {
                                                                           10.0),
                                                             ),
                                                           ),
-                                                          minimumSize: MaterialStateProperty
+                                                          minimumSize: WidgetStateProperty
                                                               .all(Size(
                                                                   MediaQuery.of(
                                                                               context)
@@ -152,12 +150,12 @@ class _AdminAttendanceScreenState extends State<AdminAttendanceScreen> {
                                                                       0.8,
                                                                   50)),
                                                           backgroundColor:
-                                                              MaterialStateProperty
+                                                              WidgetStateProperty
                                                                   .all(Colors
                                                                       .transparent),
-                                                          // elevation: MaterialStateProperty.all(3),
+                                                          // elevation: WidgetStateProperty.all(3),
                                                           shadowColor:
-                                                              MaterialStateProperty
+                                                              WidgetStateProperty
                                                                   .all(Colors
                                                                       .transparent),
                                                         ),
@@ -183,15 +181,15 @@ class _AdminAttendanceScreenState extends State<AdminAttendanceScreen> {
                                                             style:
                                                                 buttonStyle)),
                                                   ),
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     width: 10,
                                                   ),
                                                   Container(
                                                     width: 120,
                                                     height: 35,
                                                     decoration: BoxDecoration(
-                                                      boxShadow: [
-                                                        const BoxShadow(
+                                                      boxShadow: const [
+                                                        BoxShadow(
                                                             color:
                                                                 Colors.black26,
                                                             offset:
@@ -220,7 +218,7 @@ class _AdminAttendanceScreenState extends State<AdminAttendanceScreen> {
                                                     ),
                                                     child: ElevatedButton(
                                                         style: ButtonStyle(
-                                                          shape: MaterialStateProperty
+                                                          shape: WidgetStateProperty
                                                               .all<
                                                                   RoundedRectangleBorder>(
                                                             RoundedRectangleBorder(
@@ -230,7 +228,7 @@ class _AdminAttendanceScreenState extends State<AdminAttendanceScreen> {
                                                                           10.0),
                                                             ),
                                                           ),
-                                                          minimumSize: MaterialStateProperty
+                                                          minimumSize: WidgetStateProperty
                                                               .all(Size(
                                                                   MediaQuery.of(
                                                                               context)
@@ -239,12 +237,12 @@ class _AdminAttendanceScreenState extends State<AdminAttendanceScreen> {
                                                                       0.8,
                                                                   50)),
                                                           backgroundColor:
-                                                              MaterialStateProperty
+                                                              WidgetStateProperty
                                                                   .all(Colors
                                                                       .transparent),
-                                                          // elevation: MaterialStateProperty.all(3),
+                                                          // elevation: WidgetStateProperty.all(3),
                                                           shadowColor:
-                                                              MaterialStateProperty
+                                                              WidgetStateProperty
                                                                   .all(Colors
                                                                       .transparent),
                                                         ),

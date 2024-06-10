@@ -7,7 +7,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:mentor_mate/constants.dart';
-import 'package:mentor_mate/firebase_auth.dart';
 import 'package:mentor_mate/input_validator.dart';
 import 'package:mentor_mate/screens/login_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -23,9 +22,7 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
 
-  final TextEditingController _fullNameControoler = TextEditingController();
   final TextEditingController _firstNameControoler = TextEditingController();
-  final TextEditingController _lastNameControoler = TextEditingController();
   final TextEditingController _emailControoler = TextEditingController();
   final TextEditingController _phoneControoler = TextEditingController();
   final TextEditingController _addressControoler = TextEditingController();
@@ -33,7 +30,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _confirmPasswordControoler = TextEditingController();
 
 
-  MethodsHandler _methodsHandler = MethodsHandler();
   InputValidator _inputValidator = InputValidator();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -72,8 +68,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: size.height*0.25,
                   width: size.width,
                   child: Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                    decoration: const BoxDecoration(
+                      gradient: const LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                         stops: [0.0, 1.0],
@@ -101,14 +97,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
                 Container(height: size.height*0.8,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(topRight: Radius.circular(30),
                           topLeft: Radius.circular(30)
                       )
                   ),
                   child: SingleChildScrollView(
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     child: Column(
                       children: [
 
@@ -121,7 +117,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             height: 150,),
                         ),
 
-                        Center(
+                        const Center(
                             child: Text('Create Account', style: TextStyle(color: Color(0xFF585858), fontSize: 16,fontWeight: FontWeight.bold),)
                         ),
 
@@ -131,10 +127,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
                         Container(
-                          margin: EdgeInsets.only(left: 16,right: 16,bottom: 0),
+                          margin: const EdgeInsets.only(left: 16,right: 16,bottom: 0),
                           child: TextFormField(
                             controller: _firstNameControoler,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 14,
                               color: Colors.black,
 
@@ -146,7 +142,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             },
                             decoration: InputDecoration(
                               //contentPadding: EdgeInsets.only(top: 15,bottom: 15),
-                              contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                              contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                               focusColor: Colors.white,
                               //add prefix icon
 
@@ -158,14 +154,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: textColor, width: 1.0),
+                                const BorderSide(color: textColor, width: 1.0),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               fillColor: Colors.grey,
                               hintText: "",
 
                               //make hint text
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                                 color: Colors.grey,
                                 fontSize: 16,
                                 fontFamily: "verdana_regular",
@@ -175,7 +171,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               //create lable
                               labelText: 'Full Name',
                               //lable style
-                              labelStyle: TextStyle(
+                              labelStyle: const TextStyle(
                                 color: textColor,
                                 fontSize: 16,
                                 fontFamily: "verdana_regular",
@@ -188,11 +184,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           height: size.height*0.02,
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 16,right: 16,bottom: 0),
+                          margin: const EdgeInsets.only(left: 16,right: 16,bottom: 0),
                           child: TextFormField(
                             controller: _emailControoler,
                             keyboardType: TextInputType.emailAddress,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 14,
                               color: Colors.black,
 
@@ -204,7 +200,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             },
                             decoration: InputDecoration(
                               //contentPadding: EdgeInsets.only(top: 15,bottom: 15),
-                              contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                              contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                               focusColor: Colors.white,
                               //add prefix icon
 
@@ -216,14 +212,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: textColor, width: 1.0),
+                                const BorderSide(color: textColor, width: 1.0),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               fillColor: Colors.grey,
                               hintText: "",
 
                               //make hint text
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                                 color: Colors.grey,
                                 fontSize: 16,
                                 fontFamily: "verdana_regular",
@@ -233,7 +229,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               //create lable
                               labelText: 'Email Address',
                               //lable style
-                              labelStyle: TextStyle(
+                              labelStyle: const TextStyle(
                                 color: textColor,
                                 fontSize: 16,
                                 fontFamily: "verdana_regular",
@@ -246,10 +242,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           height: size.height*0.02,
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 16,right: 16,bottom: 0),
+                          margin: const EdgeInsets.only(left: 16,right: 16,bottom: 0),
                           child: TextFormField(
                             controller: _phoneControoler,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 14,
                               color: Colors.black,
                             ),
@@ -262,7 +258,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             decoration: InputDecoration(
                               //contentPadding: EdgeInsets.only(top: 15,bottom: 15),
 
-                              contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                              contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                               focusColor: Colors.white,
                               //add prefix icon
 
@@ -274,14 +270,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: textColor, width: 1.0),
+                                const BorderSide(color: textColor, width: 1.0),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               fillColor: Colors.grey,
                               hintText: "",
 
                               //make hint text
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                                 color: Colors.grey,
                                 fontSize: 16,
                                 fontFamily: "verdana_regular",
@@ -290,7 +286,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                               //create lable
                               labelText: 'Phone Number',
-                              labelStyle: TextStyle(
+                              labelStyle: const TextStyle(
                                 color: textColor,
                                 fontSize: 16,
                                 fontFamily: "verdana_regular",
@@ -303,11 +299,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           height: size.height*0.02,
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 16,right: 16,top: 0),
+                          margin: const EdgeInsets.only(left: 16,right: 16,top: 0),
                           child: TextFormField(
                             autofocus: true,
                             controller: _passwordControoler,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 14,
                               color: Colors.black,
 
@@ -321,7 +317,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               //contentPadding: EdgeInsets.only(top: 15,bottom: 15),
                               focusColor: Colors.white,
                               //add prefix icon
-                              contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                              contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
 
                               // errorText: "Error",
 
@@ -339,7 +335,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
                               //make hint text
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                                 color: Colors.grey,
                                 fontSize: 16,
                                 fontFamily: "verdana_regular",
@@ -349,7 +345,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               //create lable
                               labelText: 'Password',
                               //lable style
-                              labelStyle: TextStyle(
+                              labelStyle: const TextStyle(
                                 color: textColor,
                                 fontSize: 16,
                                 fontFamily: "verdana_regular",
@@ -362,11 +358,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           height: size.height*0.02,
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 16,right: 16,top: 0),
+                          margin: const EdgeInsets.only(left: 16,right: 16,top: 0),
                           child: TextFormField(
                             autofocus: true,
                             controller: _confirmPasswordControoler,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 14,
                               color: Colors.black,
 
@@ -380,7 +376,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               //contentPadding: EdgeInsets.only(top: 15,bottom: 15),
                               focusColor: Colors.white,
                               //add prefix icon
-                              contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                              contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
 
                               // errorText: "Error",
 
@@ -398,7 +394,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
                               //make hint text
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                                 color: Colors.grey,
                                 fontSize: 16,
                                 fontFamily: "verdana_regular",
@@ -408,7 +404,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               //create lable
                               labelText: 'Confirm Password',
                               //lable style
-                              labelStyle: TextStyle(
+                              labelStyle: const TextStyle(
                                 color: textColor,
                                 fontSize: 16,
                                 fontFamily: "verdana_regular",
@@ -424,7 +420,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         SizedBox(
                           height: size.height*0.01,
                         ),
-                        _isLoading ? CircularProgressIndicator(
+                        _isLoading ? const CircularProgressIndicator(
                           color: primaryColor,
                           strokeWidth: 2
                           ,
@@ -435,10 +431,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                             decoration: BoxDecoration(
                               boxShadow: [
-                                BoxShadow(
+                                const BoxShadow(
                                     color: Colors.black26, offset: Offset(0, 4), blurRadius: 5.0)
                               ],
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                                 stops: [0.0, 1.0],
@@ -579,15 +575,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     else {
                                       setState(() {
                                         _isLoading = true;
-                                        print('We are in loading');
                                         //  state = ButtonState.loading;
                                       });
 
-                                      print(_firstNameControoler.text.toString());
-                                      print( _emailControoler.text.toString());
-                                      print( _addressControoler.text.toString());
-                                      print( _passwordControoler.text.toString());
-                                      print( _phoneControoler.text.toString());
                                       //createAccount();
                                       //_methodsHandler.createAccount(name: _controllerClinic.text, email: _controller.text, password: _controllerPass.text, context: context);
                                       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -645,7 +635,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                                   prefs.setString('name',
                                                       _firstNameControoler.text.trim());
                                                   prefs.setString('userId', user.uid);
-                                                  print('Account creation successful');
                                                   setState(() {
                                                     _isLoading = false;
                                                   });
@@ -654,7 +643,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                                     PageRouteBuilder(
                                                       pageBuilder: (c, a1, a2) => LoginScreen(userType: widget.userType,),
                                                       transitionsBuilder: (c, anim, a2, child) => FadeTransition(opacity: anim, child: child),
-                                                      transitionDuration: Duration(milliseconds: 100),
+                                                      transitionDuration: const Duration(milliseconds: 100),
                                                     ),
                                                   );
                                                   Fluttertoast.showToast(
@@ -670,7 +659,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                                   setState(() {
                                                     _isLoading = false;
                                                   });
-                                                  print('error');
                                                 }
 
                                               }
@@ -682,11 +670,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                                                   showAlertDialog(context, 'Sorry', 'The email address is already in use by another account.');
                                                 }
-                                                print(e.message);
-                                                print(e.code);
                                               }
 
-                                              await Future.delayed(Duration(seconds: 1));
+                                              await Future.delayed(const Duration(seconds: 1));
 
                                             }
 
@@ -703,7 +689,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   //   context,
                                   //   MaterialPageRoute(builder: (context) =>  DashBoardScreen(index: 0, title: '',)),
                                   // );
-                                }, child: Text('Sign Up', style: buttonStyle)),
+                                }, child: const Text('Sign Up', style: buttonStyle)),
                           ),
                         ),
                         SizedBox(
@@ -808,10 +794,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
     // set up the button
 
     CupertinoAlertDialog alert = CupertinoAlertDialog(
-      title: Text("$title"),
+      title: Text(title),
       content: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Text("$content"),
+        child: Text(content),
       ),
       actions: [
         // CupertinoDialogAction(
@@ -822,7 +808,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         //     }
         // ),
         CupertinoDialogAction(
-            child: Text("OK"),
+            child: const Text("OK"),
             onPressed: () {
               Navigator.of(context).pop();
             })

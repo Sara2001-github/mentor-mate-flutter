@@ -35,12 +35,7 @@ class DownloadPdfFile{
     try {
       androidInfo = await deviceInfo.androidInfo;
       version = int.parse(androidInfo.version.release);
-      print("ANDROID_DEVICE_VERSION $version");
-      print('Android version OpenPdfInOutPresent : ${androidInfo.version.release}');
-      print('Android version OpenPdfInOutSummary : ${androidInfo.model}');
-      print('Android version OpenPdfInOutSummary : ${androidInfo.brand}');
     } catch (e) {
-      print('Error getting Android device info: $e');
     }
     Directory? directory;
     // var linked;

@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor_mate/constants.dart';
-import 'package:mentor_mate/screens/trainer/add_task_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyTasksScreen extends StatefulWidget {
@@ -26,7 +25,7 @@ class _MyTasksScreenState extends State<MyTasksScreen> {
     FirebaseFirestore.instance.collection('Tasks')
         .get()
         .then((QuerySnapshot querySnapshot) {
-      querySnapshot.docs.forEach((doc) {
+      for (var doc in querySnapshot.docs) {
         modelTask = TaskModel();
         modelTask.title = doc['taskName'];
         modelTask.description = doc["description"];
@@ -40,7 +39,7 @@ class _MyTasksScreenState extends State<MyTasksScreen> {
             });
           }
         }
-      });
+      }
     });
   }
 
@@ -100,9 +99,9 @@ class _MyTasksScreenState extends State<MyTasksScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
+                            const Text(
                                 "Due Date",
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontSize: 14,
                                     fontFamily: "Poppins")),
                             Text(
